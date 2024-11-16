@@ -16,4 +16,19 @@
   echo "<pre>";
   print_r($numbers);
   echo "</pre>";
+
+  for($i = 0;$i<count($numbers)-1;$i++){
+    $minmum = $i ;
+    for($j = $i+1;$j<count($numbers);$j++){
+        if($numbers[$minmum] < $numbers[$j]){
+            $minmum = $j ;
+        }
+    }
+    $temp = $numbers[$minmum];
+    $numbers[$minmum] = $numbers[$i];
+    $numbers[$i]=$temp;
+  }
+  echo "<pre>";
+  print_r($numbers);
+  echo "</pre>";
 ?>
